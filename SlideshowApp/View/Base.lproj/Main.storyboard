@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,51 +12,74 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="8Sr-lV-qAI">
-                                <rect key="frame" x="67" y="93" width="240" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="imA-A8-wrd">
+                                <rect key="frame" x="10" y="538.5" width="394" height="112"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0q-2x-Io8">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="112"/>
+                                        <state key="normal" title="Button" image="iconfinder_back_126585"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hq2-37-HFt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsi-af-CRr">
+                                        <rect key="frame" x="148" y="0.0" width="98" height="112"/>
+                                        <state key="normal" title="Button" image="iconfinder_forward_126569"/>
+                                        <connections>
+                                            <action selector="nextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VYm-3m-aSc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kL-C9-jjm">
+                                        <rect key="frame" x="296" y="0.0" width="98" height="112"/>
+                                        <state key="normal" title="Button" image="iconfinder_youtube_1632538"/>
+                                        <connections>
+                                            <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j6d-cB-CHh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="imA-A8-wrd" secondAttribute="height" multiplier="899:256" id="lFh-PS-n2e"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="8Sr-lV-qAI">
+                                <rect key="frame" x="68" y="151" width="262" height="211.5"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8Sr-lV-qAI" secondAttribute="height" multiplier="223:180" id="T0C-pJ-JEk"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ikK-Fe-GUI" appends="YES" id="4Gh-Yu-u58"/>
+                                </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsi-af-CRr">
-                                <rect key="frame" x="157" y="437" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="iconfinder_forward_126569"/>
-                                <connections>
-                                    <action selector="nextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VYm-3m-aSc"/>
-                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RG4-Ev-ESR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0q-2x-Io8">
-                                <rect key="frame" x="36" y="437" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="iconfinder_back_126585"/>
-                                <connections>
-                                    <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hq2-37-HFt"/>
-                                    <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="toc-rs-4pP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kL-C9-jjm">
-                                <rect key="frame" x="265" y="436" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="iconfinder_youtube_1632538"/>
-                                <connections>
-                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j6d-cB-CHh"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="imA-A8-wrd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="GGo-Oe-PSo"/>
+                            <constraint firstAttribute="trailing" secondItem="imA-A8-wrd" secondAttribute="trailing" constant="10" id="K69-V9-oJv"/>
+                            <constraint firstItem="8Sr-lV-qAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="107" id="ejR-Wm-VH6"/>
+                            <constraint firstItem="imA-A8-wrd" firstAttribute="top" secondItem="8Sr-lV-qAI" secondAttribute="bottom" constant="176" id="fqb-XI-ktn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Sr-lV-qAI" secondAttribute="trailing" constant="84" id="jEH-dU-OBl"/>
+                            <constraint firstItem="8Sr-lV-qAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="vEq-fV-iL7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="l0q-2x-Io8" id="TqQ-83-esX"/>
+                        <outlet property="changeImageVIew" destination="8Sr-lV-qAI" id="Opb-eC-6ht"/>
                         <outlet property="nextButton" destination="wsi-af-CRr" id="o06-ig-ndu"/>
                         <outlet property="playButton" destination="2kL-C9-jjm" id="1fj-aJ-lmS"/>
-                        <outlet property="prevButton" destination="l0q-2x-Io8" id="nxL-W5-Mpt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ikK-Fe-GUI">
+                    <connections>
+                        <action selector="nextButton:" destination="BYZ-38-t0r" id="2yX-hi-gMD"/>
+                        <segue destination="MoL-wk-Xxw" kind="presentation" identifier="nextVC" id="ZuU-0W-gdW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="115.59220389805098"/>
         </scene>
@@ -65,15 +88,48 @@
             <objects>
                 <viewController id="MoL-wk-Xxw" customClass="nextViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ie3-ER-E7e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="T6N-8A-iSq">
+                                <rect key="frame" x="0.0" y="20" width="414" height="391"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="T6N-8A-iSq" secondAttribute="height" multiplier="375:391" id="2fB-ap-p3y"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yf-zr-rMb">
+                                <rect key="frame" x="172" y="463" width="70" height="67.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6yf-zr-rMb" secondAttribute="height" multiplier="31:30" id="rqw-ra-Kfw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="s4W-9H-Dzb" kind="unwind" unwindAction="unwind:" id="PEI-06-gJs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="j8O-ZZ-SuR" firstAttribute="trailing" secondItem="6yf-zr-rMb" secondAttribute="trailing" constant="172" id="Ibk-dw-Is6"/>
+                            <constraint firstItem="6yf-zr-rMb" firstAttribute="centerX" secondItem="T6N-8A-iSq" secondAttribute="centerX" id="PpZ-np-bUQ"/>
+                            <constraint firstItem="T6N-8A-iSq" firstAttribute="top" secondItem="j8O-ZZ-SuR" secondAttribute="top" constant="20" id="U97-2a-14z"/>
+                            <constraint firstItem="T6N-8A-iSq" firstAttribute="trailing" secondItem="j8O-ZZ-SuR" secondAttribute="trailing" id="ZWX-kh-Oht"/>
+                            <constraint firstItem="6yf-zr-rMb" firstAttribute="top" secondItem="T6N-8A-iSq" secondAttribute="bottom" constant="52" id="cff-BO-eQN"/>
+                            <constraint firstItem="T6N-8A-iSq" firstAttribute="leading" secondItem="j8O-ZZ-SuR" secondAttribute="leading" id="iNu-Tc-Fns"/>
+                            <constraint firstItem="6yf-zr-rMb" firstAttribute="leading" secondItem="j8O-ZZ-SuR" secondAttribute="leading" constant="172" id="kg0-IL-fGa"/>
+                            <constraint firstItem="j8O-ZZ-SuR" firstAttribute="bottom" secondItem="6yf-zr-rMb" secondAttribute="bottom" constant="154" id="pRe-AW-GZ6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="j8O-ZZ-SuR"/>
                     </view>
+                    <connections>
+                        <outlet property="largeImageView" destination="T6N-8A-iSq" id="g3Z-i2-eNE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8D-Bl-eqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="s4W-9H-Dzb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="830" y="116"/>
+            <point key="canvasLocation" x="829.60000000000002" y="115.59220389805098"/>
         </scene>
     </scenes>
     <resources>
