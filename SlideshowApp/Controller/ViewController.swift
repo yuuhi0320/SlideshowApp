@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //初期画像
         changeImageVIew.image = UIImage(named: "\(pictureArray[0]).jpg")
-        
+        //初期ボタン
         let image = UIImage(named: "\(playOrStopArray[0]).jpg")
         let state = UIControl.State.normal
         playButton.setImage(image, for: state)
@@ -91,13 +91,22 @@ class ViewController: UIViewController {
     
     //画像タップ時の遷移
     @IBAction func nextButton(_ sender: Any) {
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! nextViewController
         nextVC.count = count
-        timer.invalidate()
+        if nextButton.isEnabled == false && backButton.isEnabled == false {
+                timer.invalidate()
+                //一時停止ボタンを再生ボタンに変更
+                let image = UIImage(named: "\(playOrStopArray[0]).jpg")
+                let state = UIControl.State.normal
+                playButton.setImage(image, for: state)
+                //next及びbackボタンが使用可能。
+                nextButton.isEnabled = true
+                backButton.isEnabled = true
+                timer = nil
+        }
     }
+    
 }
